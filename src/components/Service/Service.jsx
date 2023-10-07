@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Service = ({ singleData }) => {
-  const { image, title, short_description, price, details_button } = singleData;
+  const { id, image, title, short_description, price, details_button } =
+    singleData;
 
   return (
     <div className="rounded-lg border shadow-inner p-5">
@@ -15,9 +17,11 @@ const Service = ({ singleData }) => {
         <p>{short_description.slice(0, 150)}...</p>
         <p className="font-bold my-3">Price: {price}</p>
         <div className="text-center">
-          <button className="w-full py-3 rounded-lg text-white bg-[#4a4040]">
-            {details_button}
-          </button>
+          <Link to={`/service/${id}`}>
+            <button className="w-full py-3 rounded-lg text-white bg-[#4a4040]">
+              {details_button}
+            </button>
+          </Link>
         </div>
       </div>
     </div>

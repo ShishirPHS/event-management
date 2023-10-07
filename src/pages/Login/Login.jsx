@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
+import "./Login.css";
 
 const Login = () => {
+  const handleLogIn = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    console.log(email, password);
+  };
+
   return (
     <div className="container mx-auto">
       <h2 className="text-center font-bold text-5xl mb-6">Please Login!</h2>
       <div className="hero">
         <div className="hero-content flex-col w-2/4">
           <div className="card w-full drop-shadow bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogIn} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -33,7 +43,7 @@ const Login = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="normal-case btn bg-[#4A4040] text-white">
+                <button className="loginBtn normal-case btn bg-[#4A4040] text-white">
                   Login
                 </button>
               </div>

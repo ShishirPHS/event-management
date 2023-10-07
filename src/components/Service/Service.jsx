@@ -4,7 +4,7 @@ const Service = ({ singleData }) => {
   const { image, title, short_description, price, details_button } = singleData;
 
   return (
-    <div className="rounded-lg border drop-shadow-md p-5">
+    <div className="rounded-lg border shadow-inner p-5">
       <img
         className="rounded-lg h-[250px] object-cover w-full"
         src={image}

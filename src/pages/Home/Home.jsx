@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div className="">
-      <div className="container mx-auto">
+      <div className="container mx-auto mb-24">
         <h3 className="text-center text-4xl mb-12 font-semibold">
           Our Services
         </h3>

@@ -54,7 +54,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div>
-          <h3 className="font-bold text-4xl">Event Management</h3>
+          <h3 className="font-bold text-4xl">Event Marvels</h3>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">

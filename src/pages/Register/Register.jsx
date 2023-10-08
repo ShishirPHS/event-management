@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -7,6 +7,7 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -45,6 +46,7 @@ const Register = () => {
           icon: "success",
           title: "Registration successful",
         });
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);

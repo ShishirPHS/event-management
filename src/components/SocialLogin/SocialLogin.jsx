@@ -8,9 +8,9 @@ const SocialLogin = () => {
   const { googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleGoogleLogin = () => { 
+  const handleGoogleLogin = () => {
     googleLogin()
-      .then(() => { 
+      .then(() => {
         Swal.fire({
           icon: "success",
           title: "Login Successful",
@@ -26,11 +26,11 @@ const SocialLogin = () => {
   };
 
   return (
-    <div>
+    <div className="px-8">
       <div className="divider">Continue With</div>
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center">
         <button
-          className="flex items-center border px-10 py-5 text-xl rounded-lg"
+          className="flex items-center border px-10 py-5 text-xl rounded-lg mb-8 mt-2"
           onClick={handleGoogleLogin}
         >
           <BiLogoGoogle className="mr-3"></BiLogoGoogle> Google

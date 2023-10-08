@@ -1,11 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Service from "../../components/Service/Service";
+import Banner from "../../components/Banner/Banner";
 
 const Home = () => {
   const data = useLoaderData();
 
   return (
-    <div className="">
+    <div>
+      <Banner></Banner>
       <div className="container mx-auto mb-24">
         <h3 className="text-center text-4xl mb-12 font-semibold">
           Our Services

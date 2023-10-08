@@ -16,6 +16,13 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    if (!/^(?=.*[A-Z])(?=.*[\W_]).{6,}$/.test(password)) {
+      return Swal.fire({
+        icon: "error",
+        text: "Your password should be a minimum of 6 characters in length, must include at least one uppercase letter, and should also contain at least one special character.",
+      });
+    }
+
     console.log(name, photo, email, password);
 
     // create user
@@ -41,6 +48,10 @@ const Register = () => {
       })
       .catch((err) => {
         console.log(err);
+        Swal.fire({
+          icon: "error",
+          title: err.message,
+        });
       });
   };
 

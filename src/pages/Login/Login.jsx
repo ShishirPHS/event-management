@@ -18,13 +18,13 @@ const Login = () => {
     console.log(email, password);
 
     signIn(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         Swal.fire({
           icon: "success",
           title: "Login successful",
         });
 
+        // navigate after successful login
         navigate(location?.state ? location.state : "/");
         console.log(location);
       })

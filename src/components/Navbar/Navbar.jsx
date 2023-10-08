@@ -74,7 +74,7 @@ const Navbar = () => {
             <div className="w-12 h-12 border border-[#403F3F] rounded-full">
               <img
                 className="w-full h-full rounded-full object-cover"
-                src={`${user?.photoURL})`}
+                src={`${user?.photoURL}`}
                 alt="profile picture of user"
               />
             </div>

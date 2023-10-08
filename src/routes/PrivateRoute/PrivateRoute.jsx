@@ -4,10 +4,16 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const location = useLocation();
 
-  console.log(location);
+  if (loading) {
+    return (
+      <div className="container mx-auto flex items-center justify-center h-[70vh]">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
 
   if (user) {
     return children;

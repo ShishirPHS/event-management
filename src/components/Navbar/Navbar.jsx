@@ -1,15 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import userDefault from "../../assets/userDefault.png";
 import "./Navbar.css";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut().then(() => {
+      Swal.fire({
+        icon: "success",
+        title: "Log Out successful",
+      });
+    });
+  };
+
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
       </li>
     </>
   );
@@ -47,6 +59,15 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="ul menu menu-horizontal px-1">{links}</ul>
+        <div className="ml-4 text-lg text-[#878f97] hover:text-[#242d3b] font-medium">
+          {user ? (
+            <Link>
+              <button onClick={handleSignOut}>Log Out</button>
+            </Link>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
+        </div>
       </div>
       <div className="navbar-end">
         <h3 className="mr-4 font-semibold text-lg">{}</h3>

@@ -3,6 +3,7 @@ import "./Register.css";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -17,9 +18,22 @@ const Register = () => {
 
     console.log(name, photo, email, password);
 
+    // create user
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        const user = result.user;
+        console.log(user);
+
+        // update profile
+        updateProfile(user, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            console.log("profile update successfully");
+          })
+          .catch();
+
         Swal.fire({
           icon: "success",
           title: "Registration successful",

@@ -61,22 +61,32 @@ const Navbar = () => {
         <ul className="ul menu menu-horizontal px-1">{links}</ul>
         <div className="ml-4 text-lg text-[#878f97] hover:text-[#242d3b] font-medium">
           {user ? (
-            <Link>
-              <button onClick={handleSignOut}>Log Out</button>
-            </Link>
+            <button onClick={handleSignOut}>Log Out</button>
           ) : (
             <Link to="/login">Login</Link>
           )}
         </div>
       </div>
       <div className="navbar-end">
-        <h3 className="mr-4 font-semibold text-lg">{}</h3>
-        <div className="w-12 h-12 border border-[#403F3F] rounded-full">
-          <img
-            className="w-full h-full rounded-full object-cover"
-            src={userDefault}
-            alt="default picture of user"
-          />
+        <h3 className="mr-4 font-semibold text-lg">{user?.displayName}</h3>
+        <div>
+          {user ? (
+            <div className="w-12 h-12 border border-[#403F3F] rounded-full">
+              <img
+                className="w-full h-full rounded-full object-cover"
+                src={`${user?.photoURL})`}
+                alt="default picture of user"
+              />
+            </div>
+          ) : (
+            <div className="w-12 h-12 border border-[#403F3F] rounded-full">
+              <img
+                className="w-full h-full rounded-full object-cover"
+                src={userDefault}
+                alt="default picture of user"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

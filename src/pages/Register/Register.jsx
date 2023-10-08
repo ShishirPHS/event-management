@@ -16,14 +16,18 @@ const Register = () => {
     const password = e.target.password.value;
 
     console.log(name, photo, email, password);
-    createUser(email, password).then(() => {
-      Swal.fire({
-        icon: "success",
-        title: "Registration successful",
-        showConfirmButton: false,
-        timer: 1500,
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          title: "Registration successful",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    });
   };
 
   return (

@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>,
       },
     ],
   },

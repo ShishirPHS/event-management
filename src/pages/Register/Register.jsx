@@ -25,22 +25,17 @@ const Register = () => {
       });
     }
 
-    console.log(name, photo, email, password);
-
     // create user
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
 
         // update profile
         updateProfile(user, {
           displayName: name,
           photoURL: photo,
         })
-          .then(() => {
-            console.log("profile update successfully");
-          })
+          .then()
           .catch();
 
         Swal.fire({

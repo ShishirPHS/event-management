@@ -16,8 +16,6 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email, password);
-
     signIn(email, password)
       .then(() => {
         Swal.fire({
@@ -27,7 +25,6 @@ const Login = () => {
 
         // navigate after successful login
         navigate(location?.state ? location.state : "/");
-        console.log(location);
       })
       .catch((err) => {
         console.log(err);

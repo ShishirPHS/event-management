@@ -3,6 +3,7 @@ import Service from "../../components/Service/Service";
 import Banner from "../../components/Banner/Banner";
 import Footer from "../../components/Footer/Footer";
 import Venue from "../../components/Venue/Venue";
+import QuestionsAndAns from "../../components/QuestionsAndAns/QuestionsAndAns";
 
 const Home = () => {
   const data = useLoaderData();
@@ -21,6 +22,7 @@ const Home = () => {
         </div>
       </div>
       <Venue></Venue>
+      <QuestionsAndAns></QuestionsAndAns>
       <Footer></Footer>
     </div>
   );

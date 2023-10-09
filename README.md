@@ -2,6 +2,8 @@
 
 This project is a React application that utilizes React Router for navigation. It consists of three main pages: Home, Blog, and About. In this project has firebase authentication system.
 
+## [Live Link](https://event-management-44f5e.web.app/)
+
 ## Features
 
 - **React Router**: The application uses React Router to handle navigation between pages.

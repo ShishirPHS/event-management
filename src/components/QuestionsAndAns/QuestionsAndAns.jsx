@@ -3,13 +3,13 @@ import "./QuestionsAndAns.css";
 const QuestionsAndAns = () => {
   return (
     <div className="container mx-auto mb-20 grid grid-cols-12 gap-6">
-      <div className="col-span-4">
+      <div className="col-span-12 lg:col-span-4">
         <h3 className="text-4xl w-[328px] font-semibold mb-5">
           Frequently asked questions
         </h3>
         <p className="text-blue-600">Contact us for more info</p>
       </div>
-      <div className="col-span-8">
+      <div className="col-span-12 lg:col-span-8">
         <div className="QA collapse collapse-arrow">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title text-xl font-medium">

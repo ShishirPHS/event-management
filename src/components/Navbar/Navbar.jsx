@@ -54,10 +54,17 @@ const Navbar = () => {
             className="ul menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {links}
+            <div className="lg:hidden ml-[23px] text-lg text-[#878f97] hover:text-[#242d3b] font-medium">
+              {user ? (
+                <button onClick={handleSignOut}>Log Out</button>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
+            </div>
           </ul>
         </div>
         <div>
-          <h3 className="font-bold text-4xl">Event Marvels</h3>
+          <h3 className="font-bold text-lg lg:text-4xl">Event Marvels</h3>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -71,10 +78,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-        <h3 className="mr-4 font-semibold text-lg">{user?.displayName}</h3>
+        <h3 className="mr-4 font-semibold text-sm lg:text-lg">
+          {user?.displayName}
+        </h3>
         <div>
           {user ? (
-            <div className="w-12 h-12 border border-[#403F3F] rounded-full">
+            <div className="w-8 lg:w-12 h-8 lg:h-12 border border-[#403F3F] rounded-full">
               <img
                 className="w-full h-full rounded-full object-cover"
                 src={`${user?.photoURL}`}
@@ -82,7 +91,7 @@ const Navbar = () => {
               />
             </div>
           ) : (
-            <div className="w-12 h-12 border border-[#403F3F] rounded-full">
+            <div className="w-8 lg:w-12 h-8 lg:h-12 border border-[#403F3F] rounded-full">
               <img
                 className="w-full h-full rounded-full object-cover"
                 src={userDefault}

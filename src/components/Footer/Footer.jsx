@@ -1,5 +1,4 @@
 import moment from "moment/moment";
-import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -49,9 +48,8 @@ const Footer = () => {
       </nav>
       <aside>
         <p className="flex items-center">
-          Copyright{" "}
-          <AiOutlineCopyrightCircle className="mx-2"></AiOutlineCopyrightCircle>
-          {moment().format("YYYY")} - All right reserved by Event Marvels
+          Copyright &copy; {moment().format("YYYY")} - All right reserved by
+          Event Marvels
         </p>
       </aside>
     </footer>

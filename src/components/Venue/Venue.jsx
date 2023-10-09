@@ -1,7 +1,7 @@
 const Venue = () => {
   return (
     <div className="bg-[#f0eeee] py-28 mb-20">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 lg:px-0">
         <h2 className="text-center mb-12 text-4xl font-semibold">Venues</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="px-4 pt-4 pb-6 border border-[#c9b6b6] text-center rounded-lg">

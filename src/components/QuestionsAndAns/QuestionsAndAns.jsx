@@ -2,9 +2,9 @@ import "./QuestionsAndAns.css";
 
 const QuestionsAndAns = () => {
   return (
-    <div className="container mx-auto mb-20 grid grid-cols-12 gap-6">
-      <div className="col-span-12 lg:col-span-4">
-        <h3 className="text-4xl w-[328px] font-semibold mb-5">
+    <div className="container mx-auto px-4 lg:px-0 mb-20 grid grid-cols-12 gap-6">
+      <div className="flex flex-col items-center lg:items-start col-span-12 lg:col-span-4">
+        <h3 className="text-4xl w-[328px] font-semibold mb-5 text-center lg:text-left">
           Frequently asked questions
         </h3>
         <p className="text-blue-600">Contact us for more info</p>
